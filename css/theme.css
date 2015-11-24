@@ -181,7 +181,7 @@ h3 {
 
 .body1  a:link {
         text-decoration: none;
-        color: black;
+        color: #ffffff;
         opacity: 0;
         }
 
@@ -198,16 +198,16 @@ h3 {
         text-decoration: none;
         color: black;
         opacity: 1;
-          transition: opacity 3s ease-in-out;
-          -moz-transition: opacity 3s ease-in-out;
-          -webkit-transition: opacity 3s ease-in-out;
+          transition: opacity 2s ease-in-out;
+          -moz-transition: opacity 2s ease-in-out;
+          -webkit-transition: opacity 2s ease-in-out;
         }
 
 
 
 .body2  a:link {
         text-decoration: none;
-        color: black;
+        color: #aaaaaa;
         }
 
 
@@ -240,6 +240,68 @@ h3 {
           transition: opacity 3s ease-in-out;
           -moz-transition: opacity 3s ease-in-out;
           -webkit-transition: opacity 3s ease-in-out;
+        }
+
+
+.body3  a:link {
+        text-decoration: underline;
+        color: #aaaaaa;
+        }
+
+
+.body3 img {
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -webkit-transition: opacity 3s ease-in-out;
+}
+.body3 img:hover {
+    opacity: 0.1;
+    transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -webkit-transition: opacity 3s ease-in-out;
+}​
+
+.body3  a:active {
+        color: black;
+        }
+
+.body3  a:visited {
+        text-decoration: none;
+        color: black;
+        }
+
+.body3  a:hover {
+        text-decoration: none;
+        color: grey;
+        opacity: 0.1;
+          transition: opacity 3s ease-in-out;
+          -moz-transition: opacity 3s ease-in-out;
+          -webkit-transition: opacity 3s ease-in-out;
+        }
+
+.body4  a:link {
+        text-decoration: none;
+        color: #ffffff;
+        opacity: 0;
+        }
+
+.body4  a:active {
+        color: white;
+        }
+
+.body4  a:visited {
+        text-decoration: none;
+        color: white;
+        }
+
+.body4  a:hover {
+        text-decoration: none;
+        color: black;
+        opacity: 1;
+          transition: opacity 2s ease-in-out;
+          -moz-transition: opacity 2s ease-in-out;
+          -webkit-transition: opacity 2s ease-in-out;
         }
 
 
@@ -281,8 +343,9 @@ h3 {
 }
 .menu-content span {
     display: block;
-    text-align: center;
-    vertical-align: middle;
+    text-align: right;
+    /*vertical-align: middle;*/
+    margin-right: 30px;
     color: black;
 }
 
@@ -300,12 +363,28 @@ h3 {
 	border:0px solid;
 	position: relative;
 	float:top;
-  text-align: center;
+  text-align: right;
+  margin-right:30px;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-align-content: center;
     align-content: center;
 		}
+
+.name2 { 
+
+  font-family: "Courier New", serif;
+  color:white;
+  font-weight:bold;
+  border:0px solid;
+  position: relative;
+  float:top;
+  text-align: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    }
 
 /* 
 
@@ -314,7 +393,10 @@ h3 {
 
 .links-div {
   padding-top: 20%;
+  padding-bottom: 20%;
+  border:0px solid;
 }
+
 
 
 /* 
@@ -442,12 +524,13 @@ h3 {
 .designtable {
   position:absolute;
   overflow-y: auto;
-  border:0px solid;
-  margin: 0 auto; 
+  border:1px solid;
+  margin:0 auto; 
 }
 
 .designtableleft {
   position: relative;
+  vertical-align: top;
   float:left;
   width:303px;
   height:30px;
@@ -457,6 +540,7 @@ h3 {
 
 .designtableleftlonger {
   position: relative;
+  vertical-align: top;
   float:left;
   width:303px;
   height:100px;
@@ -466,6 +550,7 @@ h3 {
 
 .designtableleftevenlonger {
   position: relative;
+  vertical-align: top;
   float:left;
   width:303px;
   height:145px;
@@ -475,6 +560,7 @@ h3 {
 
 .designtableright {
   position: relative;
+  vertical-align: top;
   text-align: left;
   margin-left: 333px;
   height:30px;
@@ -636,6 +722,58 @@ audio {
 
 
 /* IMAGES END */
+
+#images {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+
+    margin: 0px auto;
+}
+#images img {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 1;
+    opacity: 0;
+
+    transition: all linear 500ms;
+    -o-transition: all linear 500ms;
+    -moz-transition: all linear 500ms;
+    -webkit-transition: all linear 500ms;
+}
+#images img:target {
+    left: 0;
+    z-index: 9;
+    opacity: 1;
+}
+#images img:first-child {
+    left: 0;
+    opacity:1;
+}
+#slider a {
+    text-decoration: none;
+    border: 0px solid #C6E4F2;
+    padding: 4px 6px;
+    color: #000000;
+      font-family: "Courier New", sans-serif;
+  color:black;
+  font-weight:normal;
+  font-size:9px;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /*
+    -webkit-align-content: center;
+    align-content: center; 
+    */
+}
+#slider a:hover {
+    background: #999999;
+}
+
 
 /* CONTACT START
 
