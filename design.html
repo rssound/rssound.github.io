@@ -10,7 +10,52 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-	<title>Film</title>
+	<title>Sound Design</title>
+
+  <script>
+
+    // Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+    // Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+
+    //** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+    //** Call: uniquevar.playclip() to play sound
+
+    var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+      "mp3": "audio/mpeg",
+      "mp4": "audio/mp4",
+      "ogg": "audio/ogg",
+      "wav": "audio/wav"
+    }
+
+    function createsoundbite8(sound){
+      var html5audio=document.createElement('audio')
+      if (html5audio.canPlayType){ //check support for HTML5 audio
+        for (var i=0; i<arguments.length; i++){
+          var sourceel=document.createElement('source')
+          sourceel.setAttribute('src', arguments[i])
+          if (arguments[i].match(/\.(\w+)$/i))
+            sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+          html5audio.appendChild(sourceel)
+        }
+        html5audio.load()
+        html5audio.playclip=function(){
+          html5audio.pause()
+          html5audio.currentTime=0
+          html5audio.play()
+        }
+        return html5audio
+      }
+      else{
+        return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+      }
+    }
+    //Initialize two sound clips with 1 fallback file each:
+
+
+    var mouseoversound8=createsoundbite8("sound/websounds/pink.mp3")
+
+
+  </script>
 
 </head>
 
@@ -22,7 +67,14 @@
 		
 
 		<a name="topfilm"><p align="center"><h1>Sound Design</h1></p></a>
+		
+		<br>
 
+		<div class="blockoftext">
+
+			<h2><p align="center"><i>Someone</i> once said <i>"Make visible what, without you, might perhaps never have been seen"</i>.<br><br>Sometimes it's equally important to make audible what, without you, might perhaps never be heard.</i></p></h2>
+
+		</div>
 		
 		<table width="100%"/>
 
@@ -181,7 +233,7 @@
 				<ul style="list-style-type:inherit";>
 	  				
 	  				<h2><li>Generated via Granular Synthesis</li>
-	  					<li>Own synthesis <span class="body3"><a href="programming.html">programming</a></span> in MaxMSP</li>
+	  					<li>Own synthesis <span class="body3"><a href="programming.html" onmouseover="mouseoversound8.playclip()">programming</a></span> in MaxMSP</li>
 	  					<li>Edited with Pro Tools 10 HD</li>
 	  					<li>No copyright infringement intended - Exercise created for non-profitable, academic and educational purposes</li>
 	  				</h2>
@@ -343,7 +395,7 @@
 
 				<ul style="list-style-type:inherit";>
 
-	  				<h2><li>Pieces generated via <span class="body3"><a href="http://www.symbolicsound.com/cgi-bin/bin/view/Products/Pacarana">Kyma - Pacarana</a></span></li>
+	  				<h2><li>Pieces generated via <span class="body3"><a href="http://www.symbolicsound.com/cgi-bin/bin/view/Products/Pacarana" onmouseover="mouseoversound8.playclip()">Kyma - Pacarana</a></span></li>
 	  					<li>Assembled with Pro Tools 10 HD</li>
 	  					<li>Mixed for multichannel setup (5.1)</li>
 	  				</h2>
